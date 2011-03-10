@@ -1,0 +1,34 @@
+<UniHighlighter>
+  <CodeFolding>
+    <FoldRegion AddCloseKeyword="0" AllowNoSubFolds="0" Skip="0" Type="1" WholeWords="1">
+      <Open Keyword="begin" RegExp="" UseRegExp="0"/>
+      <Close Keyword="end" RegExp="" UseRegExp="0"/>
+      <SubFoldRegions>
+      </SubFoldRegions>
+    </FoldRegion>
+    <FoldRegion AddCloseKeyword="0" AllowNoSubFolds="0" Skip="0" Type="1" WholeWords="1">
+      <Open Keyword="try" RegExp="" UseRegExp="0"/>
+      <Close Keyword="end" RegExp="" UseRegExp="0"/>
+      <SubFoldRegions>
+      </SubFoldRegions>
+    </FoldRegion>
+    <FoldRegion AddCloseKeyword="0" AllowNoSubFolds="0" Skip="0" Type="1" WholeWords="1">
+      <Open Keyword="case" RegExp="" UseRegExp="0"/>
+      <Close Keyword="end" RegExp="" UseRegExp="0"/>
+      <SubFoldRegions>
+      </SubFoldRegions>
+    </FoldRegion>   
+    <FoldRegion AddCloseKeyword="1" AllowNoSubFolds="1" Skip="0" Type="0" WholeWords="1">
+      <Open Keyword="{" RegExp="" UseRegExp="0"/>
+      <Close Keyword="}" RegExp="" UseRegExp="0"/>
+      <SubFoldRegions>
+      </SubFoldRegions>
+    </FoldRegion>
+    <SkipRegions>
+      <String Open="&apos;" Close="&apos;" Escape="" />
+      <MultiLineComment Open="{" Close="}" />
+      <SingleLineComment Open="//" />
+    </SkipRegions>
+  </CodeFolding>
+ <CopyRight>Delphi component (Copyright(C) Andrey Voropay (avoropay@ukr.net), 2010)</CopyRight>
+</UniHighlighter>

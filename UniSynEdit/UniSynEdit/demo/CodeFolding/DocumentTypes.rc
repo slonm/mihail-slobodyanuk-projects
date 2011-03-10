@@ -1,0 +1,12 @@
+CandCPlusPlus.xml       RCDATA  exe\DocumentTypes\CandCPlusPlus.xml
+CascadingStyleSheet.xml RCDATA  exe\DocumentTypes\CascadingStyleSheet.xml 
+CSharp.xml              RCDATA  exe\DocumentTypes\CSharp.xml              
+HTML.xml                RCDATA  exe\DocumentTypes\HTML.xml                
+INI.xml                 RCDATA  exe\DocumentTypes\INI.xml                 
+Java.xml                RCDATA  exe\DocumentTypes\Java.xml                
+JavaScript.xml          RCDATA  exe\DocumentTypes\JavaScript.xml          
+MS-VBScript.xml         RCDATA  "exe\DocumentTypes\MS-VBScript.xml"
+ObjectPascal.xml        RCDATA  exe\DocumentTypes\ObjectPascal.xml        
+Perl.xml                RCDATA  exe\DocumentTypes\Perl.xml                
+PHP.xml                 RCDATA  exe\DocumentTypes\PHP.xml                 
+VisualBasic.xml         RCDATA  exe\DocumentTypes\VisualBasic.xml         

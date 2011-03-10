@@ -1,0 +1,266 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 11 (filtered)">
+<title>SynEdit - Version history and changelog</title>
+<style>
+<!--
+ /*
+  Andrey Voropay 2010
+  icq: 107640544
+ */
+ /* Font Definitions */
+ @font-face
+  {font-family:Wingdings;
+  panose-1:5 0 0 0 0 0 0 0 0 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+  {margin:0cm;
+  margin-bottom:.0001pt;
+  font-size:12.0pt;
+  font-family:"Times New Roman";}
+h1
+  {margin-right:0cm;
+  margin-left:0cm;
+  font-size:24.0pt;
+  font-family:"Times New Roman";
+  font-weight:bold;}
+h2
+  {margin-right:0cm;
+  margin-left:0cm;
+  font-size:18.0pt;
+  font-family:"Times New Roman";
+  font-weight:bold;}
+h3
+  {margin-right:0cm;
+  margin-left:0cm;
+  font-size:13.5pt;
+  font-family:"Times New Roman";
+  font-weight:bold;}
+p
+  {margin-right:0cm;
+  margin-left:0cm;
+  font-size:12.0pt;
+  font-family:"Times New Roman";}
+tt
+  {font-family:"Courier New";}
+@page Section1
+  {size:595.3pt 841.9pt;
+  margin:2.0cm 42.5pt 2.0cm 3.0cm;}
+div.Section1
+  {page:Section1;}
+ /* List Definitions */
+ ol
+  {margin-bottom:0cm;}
+ul
+  {margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=RU>
+
+<div class=Section1>
+
+<h1><span lang=EN-US>SynEdit - Version history and changelog</span></h1>
+
+<h3><span lang=EN-US>Contributors:</span></h3>
+
+<blockquote style='margin-top:5.0pt;margin-bottom:5.0pt'>
+
+<p class=MsoNormal><span lang=EN-US>Andrey Voropay </span></p>
+
+</blockquote>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h2>[SynEdit 1.0<span lang=EN-US>3</span>]</h2>
+
+<ul type=disc>
+ <li class=MsoNormal><b><span lang=EN-US>SynEditCodeFolding.pas:</span></b></li>
+ <ul type=circle>
+  <li class=MsoNormal><span lang=EN-US>Voropay Andrey</span></li>
+  <ul type=square>
+   <li class=MsoNormal><span lang=EN-US>New classes for Code Folding from
+       Mystix Text Editor (2005 Piotr Jura)</span></li>
+   <li class=MsoNormal><span lang=EN-US>Add support Unicode.</span></li>
+  </ul>
+ </ul>
+ <li class=MsoNormal><b>SynEditMiscClasses.pas:</b> </li>
+ <ul type=circle>
+  <li class=MsoNormal><span lang=EN-US>Voropay Andrey:</span></li>
+  <ul type=square>
+   <li class=MsoNormal><span lang=EN-US>Code Folding support</span></li>
+   <ul type=square>
+    <li class=MsoNormal><span lang=EN-US>Added TSynCodeFolding classe.</span></li>
+    <li class=MsoNormal><span lang=EN-US>Added TSynCollapsingMarkStyle,
+        TSynCodeFoldingChanges, TCodeFoldingChangeEvent types</span></li>
+   </ul>
+  </ul>
+ </ul>
+ <li class=MsoNormal><b><span lang=EN-US>SynEdit.pas:</span></b><span
+     lang=EN-US> </span></li>
+ <ul type=circle>
+  <li class=MsoNormal><span lang=EN-US>Voropay Andrey add Code Folding support</span></li>
+  <ul type=square>
+   <li class=MsoNormal><span lang=EN-US>Added  Plugin TSynEditCodeFoldingPlugin
+       class.</span></li>
+   <ul type=square>
+    <li class=MsoNormal><span lang=EN-US>Create and free class in TSynEdit.</span></li>
+   </ul>
+   <li class=MsoNormal><span lang=EN-US>TCustomSynEdit add internal:</span></li>
+   <ul type=square>
+    <li class=MsoNormal><span lang=EN-US>    fNeedToReScan: Boolean;</span></li>
+    <li class=MsoNormal><span lang=EN-US>    fAllFoldRanges:
+        TSynEditAllFoldRanges;</span></li>
+    <li class=MsoNormal><span lang=EN-US>    fAllFoldRangesCopy:
+        TSynEditAllFoldRanges;</span></li>
+    <li class=MsoNormal><span lang=EN-US>    fLinesCopy: TUnicodeStrings;</span></li>
+    <li class=MsoNormal><span lang=EN-US>    fHighlightedFoldRange:
+        TSynEditFoldRange;</span></li>
+    <li class=MsoNormal><span lang=EN-US>    fHint: TObject;</span></li>
+    <li class=MsoNormal><span lang=EN-US>    fIndGuidBmp: Graphics.TBitmap;</span></li>
+    <li class=MsoNormal><span lang=EN-US>    fIndGuidOddBmp: Graphics.TBitmap;</span></li>
+    <li class=MsoNormal><span lang=EN-US>    fHIndGuidBmp: Graphics.TBitmap;</span></li>
+    <li class=MsoNormal><span lang=EN-US>    fHIndGuidOddBmp: Graphics.TBitmap;</span></li>
+    <li class=MsoNormal><span lang=EN-US>    fCodeFolding: TSynCodeFolding;</span></li>
+    <li class=MsoNormal><span lang=EN-US>    fCodeFoldingPlugin:
+        TSynEditCodeFoldingPlugin;</span></li>
+   </ul>
+   <li class=MsoNormal><span lang=EN-US>TCustomSynEdit add:</span></li>
+   <ul type=square>
+    <li class=MsoNormal><span lang=EN-US>function GetUncollapsedStrings:
+        TUnicodeStrings;</span></li>
+    <li class=MsoNormal><span lang=EN-US>procedure CollapseAll;</span></li>
+    <li class=MsoNormal><span lang=EN-US>procedure CollapseCurrent;</span></li>
+    <li class=MsoNormal><span lang=EN-US>procedure CollapseLevel(ALevel:
+        Integer);</span></li>
+    <li class=MsoNormal><span lang=EN-US>procedure InitCodeFolding;</span></li>
+    <li class=MsoNormal><span lang=EN-US>procedure ReScanForFoldRanges;</span></li>
+    <li class=MsoNormal><span lang=EN-US>procedure
+        UpdateFoldRanges(CurrentLine, LineCount: Integer);</span></li>
+    <li class=MsoNormal><span lang=EN-US>procedure UncollapseAll;</span></li>
+    <li class=MsoNormal><span lang=EN-US>procedure UncollapseLevel(ALevel:
+        Integer; NeedInvalidate: Boolean = True);</span></li>
+    <li class=MsoNormal><span lang=EN-US>function GetRealLineNumber(aLine:
+        Integer): Integer;</span></li>
+    <li class=MsoNormal><span lang=EN-US>property CodeFolding</span></li>
+   </ul>
+   <li class=MsoNormal><span lang=EN-US>Change TCustomSynEdit metod</span>:</li>
+   <ul type=square>
+    <li class=MsoNormal><span lang=EN-US>KeyUp added call
+        CheckIfAtMatchingKeywords</span></li>
+    <li class=MsoNormal><span lang=EN-US>KeyDown added call UpdateFoldRanges</span></li>
+    <li class=MsoNormal><span lang=EN-US>KeyPress</span></li>
+    <li class=MsoNormal><span lang=EN-US>MouseMove added show Collapsed hint.</span></li>
+    <li class=MsoNormal><span lang=EN-US>MouseUp added call
+        CheckIfAtMatchingKeywords</span></li>
+    <li class=MsoNormal><span lang=EN-US>DoOnGutterClick added Collapsible Fold
+        Range if clicked in Range.</span></li>
+    <li class=MsoNormal><span lang=EN-US>Paint added show Code Folding</span></li>
+    <li class=MsoNormal><span lang=EN-US>PaintGutter added show Code Folding</span></li>
+    <li class=MsoNormal><span lang=EN-US>PaintLines</span></li>
+    <li class=MsoNormal><span lang=EN-US>DoOnCommandProcessed add rescan if
+        change</span></li>
+   </ul>
+  </ul>
+ </ul>
+ <li class=MsoNormal><b>SynCompletionProposal.pas</b></li>
+ <ul type=circle>
+  <li class=MsoNormal><span lang=EN-US>Voropay Andrey:</span></li>
+  <ul type=square>
+   <li class=MsoNormal><span lang=EN-US>Fix bag in procedure
+       RecalcFormPlacement in TSynBaseCompletionProposal method ExecuteEx </span></li>
+   <ul type=square>
+    <li class=MsoNormal><span lang=EN-US>Runtime error if Form.CurrentEditor =
+        nil. (line 2417)</span></li>
+   </ul>
+  </ul>
+  <li class=MsoNormal><span lang=EN-US>&nbsp;</span></li>
+ </ul>
+ <li class=MsoNormal><b><span lang=EN-US>SynEditHighlighter.pas</span></b></li>
+ <ul type=circle>
+  <li class=MsoNormal><span lang=EN-US>Voropay Andrey:</span></li>
+  <ul type=square>
+   <li class=MsoNormal><span lang=EN-US>Code Folding support</span></li>
+   <ul type=square>
+    <li class=MsoNormal><span lang=EN-US>Append in class TSynCustomHighlighter 
+        property FoldRegions type of TFoldRegions</span></li>
+    <li class=MsoNormal><span lang=EN-US>Changed <b>constructor</b> and <b>destructor</b>
+        create and free FoldRegions.</span></li>
+   </ul>
+  </ul>
+  <li class=MsoNormal><span lang=EN-US>&nbsp;</span></li>
+ </ul>
+ <li class=MsoNormal><b><span lang=EN-US>SynEditKeyCmds.pas</span></b></li>
+ <ul type=circle>
+  <li class=MsoNormal><span lang=EN-US>Voropay Andrey:</span></li>
+  <ul type=square>
+   <li class=MsoNormal><span lang=EN-US>Code Folding support add commands:</span></li>
+   <ul type=square>
+    <li class=MsoNormal><span lang=EN-US>  ecCollapse</span></li>
+    <li class=MsoNormal><span lang=EN-US>  ecUncollapse </span></li>
+    <li class=MsoNormal><span lang=EN-US>  ecCollapseLevel</span></li>
+    <li class=MsoNormal><span lang=EN-US>  ecUncollapseLevel</span></li>
+    <li class=MsoNormal><span lang=EN-US>  ecCollapseAll</span></li>
+    <li class=MsoNormal><span lang=EN-US>  ecUncollapseAll</span></li>
+    <li class=MsoNormal><span lang=EN-US>  ecCollapseCurrent</span></li>
+   </ul>
+  </ul>
+ </ul>
+ <li class=MsoNormal><b><span lang=EN-US>SynEditTextBuffer.pas</span></b></li>
+ <ul type=circle>
+  <li class=MsoNormal><span lang=EN-US>Voropay Andrey:</span></li>
+  <ul type=square>
+   <li class=MsoNormal><span lang=EN-US>Code Folding support</span></li>
+   <ul type=square>
+    <li class=MsoNormal><span lang=EN-US>Add in type TSynChangeReason
+        crDeleteCollapsedFold.</span></li>
+    <li class=MsoNormal><span lang=EN-US>Add in class TSynEditUndoItem
+        property:</span></li>
+    <ol start=1 type=1>
+     <li class=MsoNormal><span lang=EN-US>ChangeData: Pointer </span></li>
+     <li class=MsoNormal><span lang=EN-US>ChangeIndex: Integer</span></li>
+    </ol>
+    <li class=MsoNormal><span lang=EN-US>Change TSynEditUndoList procedure
+        AddChange, added parameters</span></li>
+    <ol start=1 type=1>
+     <li class=MsoNormal><span lang=EN-US>Data: Pointer = nil</span></li>
+     <li class=MsoNormal><span lang=EN-US>Index: Integer = 0</span></li>
+    </ol>
+   </ul>
+  </ul>
+ </ul>
+ <li class=MsoNormal><b><span lang=EN-US>SynEditTypes.pas</span></b></li>
+ <ul type=circle>
+  <li class=MsoNormal><span lang=EN-US>Voropay Andrey:</span></li>
+  <ul type=square>
+   <li class=MsoNormal><span lang=EN-US>Code Folding support</span></li>
+   <ul type=square>
+    <li class=MsoNormal><span lang=EN-US>Added conts TSynSpecialChars,
+        TSynValidStringChars, TSynWordBreakChars, TSynTabChar</span></li>
+    <li class=MsoNormal><span lang=EN-US>TSynIdentChars</span></li>
+   </ul>
+  </ul>
+ </ul>
+</ul>
+
+<p class=MsoNormal style='margin-left:54.0pt'><span lang=EN-US>&nbsp;</span></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
