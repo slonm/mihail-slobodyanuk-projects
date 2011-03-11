@@ -11,53 +11,77 @@ File_8=SourceModule,'C:\work\Контрольные\Диплом\Program\UEditOut.pas',0,1,54,5,5
 File_9=SourceModule,'C:\work\Контрольные\Диплом\Program\Data.pas',0,1,141,24,151,1,0
 
 [Modules]
-Module0=C:\Documents and Settings\Администратор\Рабочий стол\UniSynEdit_20100821\UniSynEdit\demo\CodeFolding\DemoUnit.pas
-Count=1
+Module0=F:\project\mihail-slobodyanuk-projects\trunk\UniSynEdit\UniSynEdit\demo\CodeFolding\DemoProject.dpr
+Module1=F:\project\mihail-slobodyanuk-projects\trunk\UniSynEdit\UniSynEdit\demo\CodeFolding\DemoUnit.pas
+Module2=C:\Program Files\Borland\Delphi7\DeveloperExpress\ExpressEditors Library 5\Sources\cxTextEdit.pas
+Count=3
 EditWindowCount=1
 
-[C:\Documents and Settings\Администратор\Рабочий стол\UniSynEdit_20100821\UniSynEdit\demo\CodeFolding\DemoUnit.pas]
+[F:\project\mihail-slobodyanuk-projects\trunk\UniSynEdit\UniSynEdit\demo\CodeFolding\DemoProject.dpr]
 ModuleType=SourceModule
-FormState=1
-FormOnTop=0
-
-[C:\Program Files\Borland\Delphi7\Bin\ProjectGroup1.bpg]
 FormState=0
 FormOnTop=0
 
-[C:\Documents and Settings\Администратор\Рабочий стол\UniSynEdit_20100821\UniSynEdit\demo\CodeFolding\DemoProject.dpr]
+[F:\project\mihail-slobodyanuk-projects\trunk\UniSynEdit\UniSynEdit\demo\CodeFolding\DemoUnit.pas]
+ModuleType=SourceModule
+FormState=0
+FormOnTop=0
+
+[C:\Program Files\Borland\Delphi7\DeveloperExpress\ExpressEditors Library 5\Sources\cxTextEdit.pas]
+ModuleType=SourceModule
+FormState=0
+FormOnTop=0
+
+[C:\Program Files\Borland\Delphi7\Projects\ProjectGroup1.bpg]
 FormState=0
 FormOnTop=0
 
 [EditWindow0]
-ViewCount=1
+ViewCount=3
 CurrentView=0
 View0=0
+View1=1
+View2=2
 CodeExplorer=CodeExplorer@EditWindow0
 MessageView=MessageView@EditWindow0
 Create=1
 Visible=1
 State=0
-Left=244
-Top=119
-Width=749
-Height=586
+Left=261
+Top=104
+Width=641
+Height=652
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=741
-ClientHeight=559
-LeftPanelSize=63
+ClientWidth=633
+ClientHeight=625
+LeftPanelSize=0
 LeftPanelClients=CodeExplorer@EditWindow0
-LeftPanelData=000004000000000000000000000000000000000000000000000100000000000000000C000000436F64654578706C6F726572FFFFFFFF
+LeftPanelData=00000400010000000C000000436F64654578706C6F726572000000000000000000000000000000000001000000000000000000000000FFFFFFFF
 RightPanelSize=0
-BottomPanelSize=0
+BottomPanelSize=148
 BottomPanelClients=MessageView@EditWindow0
-BottomPanelData=00000400010000000B0000004D657373616765566965770000000000000000000000000000000000FFFFFFFF
+BottomPanelData=000004000000000000000000000000000000000000000000000100000000000000000B0000004D65737361676556696577FFFFFFFF
 
 [View0]
-Module=C:\Documents and Settings\Администратор\Рабочий стол\UniSynEdit_20100821\UniSynEdit\demo\CodeFolding\DemoUnit.pas
+Module=F:\project\mihail-slobodyanuk-projects\trunk\UniSynEdit\UniSynEdit\demo\CodeFolding\DemoProject.dpr
+CursorX=31
+CursorY=9
+TopLine=1
+LeftCol=1
+
+[View1]
+Module=F:\project\mihail-slobodyanuk-projects\trunk\UniSynEdit\UniSynEdit\demo\CodeFolding\DemoUnit.pas
 CursorX=1
-CursorY=513
-TopLine=528
+CursorY=215
+TopLine=209
+LeftCol=1
+
+[View2]
+Module=C:\Program Files\Borland\Delphi7\DeveloperExpress\ExpressEditors Library 5\Sources\cxTextEdit.pas
+CursorX=27
+CursorY=54
+TopLine=48
 LeftCol=1
 
 [Watches]
@@ -93,13 +117,13 @@ Visible=1
 State=2
 Left=0
 Top=481
-Width=1016
+Width=909
 Height=105
 MaxLeft=-1
 MaxTop=-1
-MaxWidth=1024
+MaxWidth=917
 MaxHeight=105
-ClientWidth=1016
+ClientWidth=909
 ClientHeight=78
 
 [ProjectManager]
@@ -181,7 +205,7 @@ LRDockWidth=190
 Dockable=1
 SplitPos=127
 ArrangeBy=Name
-SelectedItem=Caption
+SelectedItem=
 ExpandedItems=DataController,HitTypes,Title
 HiddenCategories=
 
@@ -263,9 +287,41 @@ SortOrder=3
 ShowHints=1
 ShowChecked=1
 
+[fmGrepResults]
+Create=1
+Visible=0
+State=0
+Left=287
+Top=147
+Width=450
+Height=350
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=442
+ClientHeight=326
+TBDockHeight=350
+LRDockWidth=450
+Dockable=1
+
+[fmMacroLibrary]
+Create=1
+Visible=0
+State=0
+Left=342
+Top=137
+Width=339
+Height=401
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=331
+ClientHeight=377
+TBDockHeight=401
+LRDockWidth=339
+Dockable=1
+
 [CodeExplorer@EditWindow0]
 Create=1
-Visible=1
+Visible=0
 State=0
 Left=0
 Top=12
@@ -281,17 +337,17 @@ Dockable=1
 
 [MessageView@EditWindow0]
 Create=1
-Visible=0
+Visible=1
 State=0
-Left=-58
-Top=-438
-Width=443
-Height=85
+Left=12
+Top=0
+Width=621
+Height=148
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=443
-ClientHeight=85
-TBDockHeight=85
+ClientWidth=621
+ClientHeight=148
+TBDockHeight=148
 LRDockWidth=443
 Dockable=1
 
@@ -299,26 +355,6 @@ Dockable=1
 DockHostCount=2
 
 [DockSite0]
-DockSiteType=1
-Create=1
-Visible=1
-State=0
-Left=0
-Top=105
-Width=258
-Height=481
-MaxLeft=-1
-MaxTop=-1
-ClientWidth=250
-ClientHeight=457
-TBDockHeight=252
-LRDockWidth=190
-Dockable=1
-TabPosition=0
-ActiveTab=Project Manager
-TabDockClients=ObjectTree,ProjectManager
-
-[DockSite1]
 DockSiteType=1
 Create=1
 Visible=0
@@ -337,4 +373,24 @@ Dockable=1
 TabPosition=0
 ActiveTab=Watch List
 TabDockClients=WatchWindow,LocalVarsWindow
+
+[DockSite1]
+DockSiteType=1
+Create=1
+Visible=1
+State=0
+Left=0
+Top=105
+Width=258
+Height=481
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=250
+ClientHeight=457
+TBDockHeight=252
+LRDockWidth=190
+Dockable=1
+TabPosition=0
+ActiveTab=Project Manager
+TabDockClients=ObjectTree,ProjectManager
 

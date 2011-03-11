@@ -1,0 +1,17 @@
+<UniHighlighter>
+  <CodeFolding>
+    <FoldRegion AddCloseKeyword="0" AllowNoSubFolds="0" Skip="0" Type="0" WholeWords="0">
+      <Open Keyword="]" RegExp="" UseRegExp="0"/>
+      <Close Keyword="[" RegExp="" UseRegExp="0"/>
+      <SubFoldRegions>
+      </SubFoldRegions>
+    </FoldRegion>
+    <!--<FoldRegion AddCloseKeyword="0" AllowNoSubFolds="0" Skip="0" Type="0" WholeWords="0">
+      <Open Keyword="]" RegExp="" UseRegExp="0"/>
+      <Close Keyword="[" RegExp="" UseRegExp="0"/>
+      <SubFoldRegions>
+      </SubFoldRegions>
+    </FoldRegion>-->
+  </CodeFolding>
+ <CopyRight>Delphi component (Copyright(C) Andrey Voropay (avoropay@ukr.net), 2010)</CopyRight>
+</UniHighlighter>

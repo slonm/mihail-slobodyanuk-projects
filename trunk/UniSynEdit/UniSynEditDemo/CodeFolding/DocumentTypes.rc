@@ -1,0 +1,12 @@
+CandCPlusPlus.xml       RCDATA  DocumentTypes\CandCPlusPlus.xml
+CascadingStyleSheet.xml RCDATA  DocumentTypes\CascadingStyleSheet.xml 
+CSharp.xml              RCDATA  DocumentTypes\CSharp.xml              
+HTML.xml                RCDATA  DocumentTypes\HTML.xml                
+INI.xml                 RCDATA  DocumentTypes\INI.xml                 
+Java.xml                RCDATA  DocumentTypes\Java.xml                
+JavaScript.xml          RCDATA  DocumentTypes\JavaScript.xml          
+MS-VBScript.xml         RCDATA  "DocumentTypes\MS-VBScript.xml"
+ObjectPascal.xml        RCDATA  DocumentTypes\ObjectPascal.xml        
+Perl.xml                RCDATA  DocumentTypes\Perl.xml                
+PHP.xml                 RCDATA  DocumentTypes\PHP.xml                 
+VisualBasic.xml         RCDATA  DocumentTypes\VisualBasic.xml         

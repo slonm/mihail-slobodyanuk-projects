@@ -27,7 +27,7 @@ object Form1: TForm1
     Left = 0
     Top = 28
     Width = 846
-    Height = 589
+    Height = 592
     Align = alClient
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -46,6 +46,7 @@ object Form1: TForm1
     Gutter.Gradient = True
     Gutter.GradientEndColor = clMoneyGreen
     Highlighter = SynPasSyn1
+    ImeName = #1056#1091#1089#1089#1082#1072#1103
     Lines.UnicodeStrings = 'SynEdit1'
   end
   object tbMain: TToolBar
@@ -135,6 +136,7 @@ object Form1: TForm1
       Top = 0
       Width = 233
       Height = 21
+      ImeName = #1056#1091#1089#1089#1082#1072#1103
       ItemHeight = 13
       TabOrder = 0
       OnChange = ComboBox1Change

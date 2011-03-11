@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Product
+  xmlns="http://schemas.microsoft.com/developer/2004/01/bootstrapper"
+  ProductCode="BusinessObjects.CrystalReports.10.5"
+>
+  <!-- Defines list of files to be copied on build -->
+  <PackageFiles CopyAllPackageFiles="false">
+    <PackageFile Name="CRRedist2008_x86.msi" HomeSite="http://resources.businessobjects.com/support/downloads/redistributables/vs_2008/redist/x86/CRRedist2008_x86.msi" PublicKey="3082010a0282010100fa82e561d38f1b5af3f6109a917dd80e4ce660a0eee8191aece4f9d9ca5d4e9eb7f87f734047bd0386376d9bb1625eb25c31e594fceea535ab559373c3fb4158102c6e9b2f4c6cb64588e0e9ee2ad7b951fcbfdaa773cf360b640f4cf35d14f6a532139a6bd4f3eb809e28fe3f263c1ebed8bab50647e59298272f9b7ec68bb962878b60046989cdb3ca7c641256fa9e5419f35510b08fce32e27fd41d4313efc59aeca8016f8d4334cd4d93e019feed172b4a5aed4a4b9369b7658607f3f21be5e14accfdd5b3eb2faab2ac8156587170a142c32a5940a2350ff01907b120db65ae2901e13f3a4ea887d83fd92e0505199cf6da4b58e8188a812cd0d30ad56d0203010001" />
+    <PackageFile Name="CRRedist2008_x64.msi" HomeSite="http://resources.businessobjects.com/support/downloads/redistributables/vs_2008/redist/x64/CRRedist2008_x64.msi" PublicKey="3082010a0282010100fa82e561d38f1b5af3f6109a917dd80e4ce660a0eee8191aece4f9d9ca5d4e9eb7f87f734047bd0386376d9bb1625eb25c31e594fceea535ab559373c3fb4158102c6e9b2f4c6cb64588e0e9ee2ad7b951fcbfdaa773cf360b640f4cf35d14f6a532139a6bd4f3eb809e28fe3f263c1ebed8bab50647e59298272f9b7ec68bb962878b60046989cdb3ca7c641256fa9e5419f35510b08fce32e27fd41d4313efc59aeca8016f8d4334cd4d93e019feed172b4a5aed4a4b9369b7658607f3f21be5e14accfdd5b3eb2faab2ac8156587170a142c32a5940a2350ff01907b120db65ae2901e13f3a4ea887d83fd92e0505199cf6da4b58e8188a812cd0d30ad56d0203010001" />
+  </PackageFiles>
+
+  <RelatedProducts>
+    <DependsOnProduct Code="Microsoft.Net.Framework.2.0" />
+  </RelatedProducts>
+
+  <InstallChecks>
+    <MsiProductCheck Property="CRVSInstalled" Product="{AA467959-A1D6-4F45-90CD-11DC57733F32}"/>
+    <MsiProductCheck Property="CRVSRunTimex86Installed" Product="{CE26F10F-C80F-4377-908B-1B7882AE2CE3}"/>
+    <MsiProductCheck Property="CRVSRunTimex64Installed" Product="{2BFA9B05-7418-4EDE-A6FC-620427BAAAA3}. "/>
+  </InstallChecks>
+
+  <Commands Reboot="Defer">
+    <Command PackageFile="CRRedist2008_x86.msi"
+	     Arguments='/norestart'
+	     EstimatedInstalledBytes="21000000"
+	     EstimatedInstallSeconds="300">
+
+      <!-- These checks determine whether the package is to be installed -->
+
+      <InstallConditions>
+        <!-- ByPass if the Processor is not x86 -->
+        <BypassIf Property="ProcessorArchitecture" Compare="ValueNotEqualTo" Value="Intel"/>
+
+        <!-- ByPass if we have installed CRVS -->
+        <BypassIf Property="CRVSInstalled" Compare="ValueGreaterThan" Value="0" />
+
+        <!-- ByPass if we have installed the x86 redist -->
+        <BypassIf Property="CRVSRunTimex86Installed" Compare="ValueGreaterThan" Value="0" />
+
+        <!-- Block install if user does not have admin privileges -->
+        <FailIf Property="AdminUser" Compare="ValueEqualTo" Value="false" String="AdminRequired"/>
+
+        <!-- Block install on Win95 -->
+        <FailIf Property="Version9x" Compare="VersionLessThan" Value="4.10" String="InvalidPlatformWin9x"/>
+
+        <!-- Block install on NT 4 or less -->
+        <FailIf Property="VersionNT" Compare="VersionLessThan" Value="5.00" String="InvalidPlatformWinNT"/>
+
+      </InstallConditions>
+
+      <ExitCodes>
+        <ExitCode Value="0" Result="Success"/>
+        <ExitCode Value="1641" Result="SuccessReboot"/>
+        <ExitCode Value="3010" Result="SuccessReboot"/>
+        <DefaultExitCode Result="Fail" FormatMessageFromSystem="true" String="GeneralFailure" />
+      </ExitCodes>
+    </Command>
+
+    <Command PackageFile="CRRedist2008_x64.msi"
+	     Arguments='/norestart'
+	     EstimatedInstalledBytes="21000000"
+	     EstimatedInstallSeconds="300">
+
+      <!-- These checks determine whether the package is to be installed -->
+
+      <InstallConditions>
+        <!-- ByPass if the Processor is not x64 -->
+        <BypassIf Property="ProcessorArchitecture" Compare="ValueNotEqualTo" Value="AMD64"/>
+
+        <!-- ByPass if we have installed the x64 redist -->
+        <BypassIf Property="CRVSRunTimex64Installed" Compare="ValueGreaterThan" Value="0" />
+
+
+        <!-- Block install if user does not have admin privileges -->
+        <FailIf Property="AdminUser" Compare="ValueEqualTo" Value="false" String="AdminRequired"/>
+
+        <!-- Block install on Win95 -->
+        <FailIf Property="Version9x" Compare="VersionLessThan" Value="4.10" String="InvalidPlatformWin9x"/>
+
+        <!-- Block install on NT 4 or less -->
+        <FailIf Property="VersionNT" Compare="VersionLessThan" Value="5.00" String="InvalidPlatformWinNT"/>
+
+      </InstallConditions>
+
+      <ExitCodes>
+        <ExitCode Value="0" Result="Success"/>
+        <ExitCode Value="1641" Result="SuccessReboot"/>
+        <ExitCode Value="3010" Result="SuccessReboot"/>
+        <DefaultExitCode Result="Fail" FormatMessageFromSystem="true" String="GeneralFailure" />
+      </ExitCodes>
+    </Command>
+
+  </Commands>
+</Product>
