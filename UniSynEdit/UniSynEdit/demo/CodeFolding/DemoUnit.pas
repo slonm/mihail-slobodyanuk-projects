@@ -470,8 +470,8 @@ end;
 
 procedure TForm1.ViewUncollapseAllExecute(Sender: TObject);
 begin
-     SynEdit1.UncollapseAll;
-     SynEdit1.InitCodeFolding;
+//     SynEdit1.UncollapseAll;
+//     SynEdit1.InitCodeFolding;
 end;
 
 procedure TForm1.ViewCollapseLevel0Execute(Sender: TObject);
@@ -481,7 +481,7 @@ end;
 
 procedure TForm1.ViewUncollapseLevel0Execute(Sender: TObject);
 begin
-     SynEdit1.UncollapseLevel( (Sender as TAction).Tag );
+//     SynEdit1.UncollapseLevel( (Sender as TAction).Tag );
 end;
 
 procedure TForm1.EditUndoExecute(Sender: TObject);
@@ -552,7 +552,7 @@ procedure TForm1.FileSaveExecute(Sender: TObject);
 var UncollapsedUnicodeStrings : TUnicodeStrings;
 begin
     if SaveDialog1.Execute then begin
-     UncollapsedUnicodeStrings := SynEdit1.GetUncollapsedStrings;
+//     UncollapsedUnicodeStrings := SynEdit1.GetUncollapsedStrings;
      UncollapsedUnicodeStrings.SaveToFile(SaveDialog1.FileName);
     end;
 end;

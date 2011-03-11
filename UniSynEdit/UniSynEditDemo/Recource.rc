@@ -1,0 +1,2 @@
+treeview         BITMAP              recurses\treeview.bmp
+textsemple       RCDATA              SynHighlighterXML.pas
