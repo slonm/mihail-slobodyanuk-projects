@@ -1,23 +1,18 @@
 [Closed Files]
-File_0=SourceModule,'F:\project\mihail-slobodyanuk-projects\trunk\UniSynEdit\UniSynEditDemo\stend\Unit2.pas',0,1,1,1,1,1,0
-File_1=SourceModule,'C:\Program Files\Borland\Delphi7\DeveloperExpress\ExpressEditors Library 5\Sources\cxTextEdit.pas',0,1,48,27,54,0,0
-File_2=SourceModule,'F:\project\mihail-slobodyanuk-projects\trunk\UniSynEdit\UniSynEdit\demo\CodeFolding\DemoUnit.pas',0,1,209,1,215,0,0
-File_3=SourceModule,'C:\Documents and Settings\Администратор\Рабочий стол\UniSynEdit_20100821\UniSynEdit\Source\SynEdit.pas',0,1,7199,15,7209,0,0
-File_4=SourceModule,'C:\Documents and Settings\Администратор\Рабочий стол\UniSynEdit_20100821\UniSynEdit\Source\SynEditTextBuffer.pas',0,1,88,1,101,0,0
-File_5=SourceModule,'C:\project\beautify\einars-js-beautify-e904472\beautify.js',0,1,61,14,72,0,0
-File_6=SourceModule,'C:\project\beautify\main.pas',0,1,1,21,10,1,0
-File_7=SourceModule,'C:\project\beautify\jsbeatify.pas',0,1,362,1,393,0,0
-File_8=SourceModule,'c:\program files\borland\delphi7\source\rtl\common\classes.pas',0,1,533,16,576,0,0
+File_0=SourceModule,'F:\project\mihail-slobodyanuk-projects\trunk\UniSynEdit\UniSynEditDemo\CodeFolding\DemoUnit.pas',0,1,1,14,17,1,0
+File_1=SourceModule,'F:\project\mihail-slobodyanuk-projects\trunk\UniSynEdit\UniSynEditDemo\stend\Unit2.pas',0,1,1,1,1,1,0
+File_2=SourceModule,'C:\Program Files\Borland\Delphi7\DeveloperExpress\ExpressEditors Library 5\Sources\cxTextEdit.pas',0,1,48,27,54,0,0
+File_3=SourceModule,'F:\project\mihail-slobodyanuk-projects\trunk\UniSynEdit\UniSynEdit\demo\CodeFolding\DemoUnit.pas',0,1,209,1,215,0,0
+File_4=SourceModule,'C:\Documents and Settings\Администратор\Рабочий стол\UniSynEdit_20100821\UniSynEdit\Source\SynEdit.pas',0,1,7199,15,7209,0,0
+File_5=SourceModule,'C:\Documents and Settings\Администратор\Рабочий стол\UniSynEdit_20100821\UniSynEdit\Source\SynEditTextBuffer.pas',0,1,88,1,101,0,0
+File_6=SourceModule,'C:\project\beautify\einars-js-beautify-e904472\beautify.js',0,1,61,14,72,0,0
+File_7=SourceModule,'C:\project\beautify\main.pas',0,1,1,21,10,1,0
+File_8=SourceModule,'C:\project\beautify\jsbeatify.pas',0,1,362,1,393,0,0
+File_9=SourceModule,'c:\program files\borland\delphi7\source\rtl\common\classes.pas',0,1,533,16,576,0,0
 
 [Modules]
-Module0=F:\project\mihail-slobodyanuk-projects\trunk\UniSynEdit\UniSynEditDemo\CodeFolding\DemoUnit.pas
-Count=1
-EditWindowCount=1
-
-[F:\project\mihail-slobodyanuk-projects\trunk\UniSynEdit\UniSynEditDemo\CodeFolding\DemoUnit.pas]
-ModuleType=SourceModule
-FormState=0
-FormOnTop=0
+Count=0
+EditWindowCount=0
 
 [C:\Program Files\Borland\Delphi7\Projects\ProjectGroup1.bpg]
 FormState=0
@@ -26,38 +21,6 @@ FormOnTop=0
 [F:\project\mihail-slobodyanuk-projects\trunk\UniSynEdit\UniSynEditDemo\CodeFolding\DemoProject.dpr]
 FormState=0
 FormOnTop=0
-
-[EditWindow0]
-ViewCount=1
-CurrentView=0
-View0=0
-CodeExplorer=CodeExplorer@EditWindow0
-MessageView=MessageView@EditWindow0
-Create=1
-Visible=1
-State=0
-Left=268
-Top=125
-Width=616
-Height=495
-MaxLeft=-1
-MaxTop=-1
-ClientWidth=608
-ClientHeight=468
-LeftPanelSize=140
-LeftPanelClients=CodeExplorer@EditWindow0
-LeftPanelData=000004000000000000000000000000000000000000000000000100000000000000000C000000436F64654578706C6F726572FFFFFFFF
-RightPanelSize=0
-BottomPanelSize=85
-BottomPanelClients=MessageView@EditWindow0
-BottomPanelData=000004000000000000000000000000000000000000000000000100000000000000000B0000004D65737361676556696577FFFFFFFF
-
-[View0]
-Module=F:\project\mihail-slobodyanuk-projects\trunk\UniSynEdit\UniSynEditDemo\CodeFolding\DemoUnit.pas
-CursorX=14
-CursorY=17
-TopLine=1
-LeftCol=1
 
 [Watches]
 Count=0
@@ -294,62 +257,10 @@ TBDockHeight=401
 LRDockWidth=339
 Dockable=1
 
-[CodeExplorer@EditWindow0]
-Create=1
-Visible=1
-State=0
-Left=0
-Top=12
-Width=140
-Height=368
-MaxLeft=-1
-MaxTop=-1
-ClientWidth=140
-ClientHeight=368
-TBDockHeight=305
-LRDockWidth=140
-Dockable=1
-
-[MessageView@EditWindow0]
-Create=1
-Visible=1
-State=0
-Left=12
-Top=0
-Width=596
-Height=85
-MaxLeft=-1
-MaxTop=-1
-ClientWidth=596
-ClientHeight=85
-TBDockHeight=85
-LRDockWidth=443
-Dockable=1
-
 [DockHosts]
 DockHostCount=2
 
 [DockSite0]
-DockSiteType=1
-Create=1
-Visible=1
-State=0
-Left=0
-Top=105
-Width=266
-Height=481
-MaxLeft=-1
-MaxTop=-1
-ClientWidth=258
-ClientHeight=457
-TBDockHeight=252
-LRDockWidth=190
-Dockable=1
-TabPosition=0
-ActiveTab=Project Manager
-TabDockClients=ObjectTree,ProjectManager,PropertyInspector
-
-[DockSite1]
 DockSiteType=1
 Create=1
 Visible=0
@@ -368,4 +279,24 @@ Dockable=1
 TabPosition=0
 ActiveTab=Watch List
 TabDockClients=WatchWindow,LocalVarsWindow
+
+[DockSite1]
+DockSiteType=1
+Create=1
+Visible=1
+State=0
+Left=0
+Top=105
+Width=266
+Height=481
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=258
+ClientHeight=457
+TBDockHeight=252
+LRDockWidth=190
+Dockable=1
+TabPosition=0
+ActiveTab=Project Manager
+TabDockClients=ObjectTree,ProjectManager,PropertyInspector
 

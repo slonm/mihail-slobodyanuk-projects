@@ -30,6 +30,7 @@ const
 type
   TForm1 = class(TForm)
     SpeedButton1: TSpeedButton;
+    SynPasSyn1: TSynPasSyn;
     FontDialog1: TFontDialog;
     SynEdit1: TSynEdit;
     MainMenu2: TMainMenu;
@@ -42,7 +43,19 @@ type
     N21: TMenuItem;
     OpenDialog1: TOpenDialog;
     cxRTTIInspector1: TcxRTTIInspector;
+    SynCSSyn1: TSynCSSyn;
+    SynCppSyn1: TSynCppSyn;
+    SynIniSyn1: TSynIniSyn;
+    SynJavaSyn1: TSynJavaSyn;
+    SynVBScriptSyn1: TSynVBScriptSyn;
+    SynPerlSyn1: TSynPerlSyn;
+    SynVBSyn1: TSynVBSyn;
+    SynWebEsSyn1: TSynWebEsSyn;
+    SynWebXmlSyn1: TSynWebXmlSyn;
     New1: TMenuItem;
+    SynWebPhpCliSyn1: TSynWebPhpCliSyn;
+    SynWebEngine1: TSynWebEngine;
+    SynWebHtmlSyn1: TSynWebHtmlSyn;
     imglMain: TImageList;
     ImageList_1: TImageList;
     tbMain: TToolBar;
@@ -184,6 +197,7 @@ type
     SpeedButton6: TSpeedButton;
     btnFileSave: TToolButton;
     dlgSave1: TSaveDialog;
+    SynWebCssSyn1: TSynWebCssSyn;
     procedure FormCreate(Sender: TObject);
     procedure cxRTTIInspector1PropertyChanged(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
