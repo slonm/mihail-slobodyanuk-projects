@@ -1,1 +1,2 @@
-del /S /Q *.dcu *.~* *.map *.exe
+del /S /Q *.dcu *.~* *.map *.exe 
+rd /S /Q .svn
