@@ -1,8 +1,8 @@
 object Form1: TForm1
-  Left = 505
-  Top = 150
-  Width = 796
-  Height = 568
+  Left = 295
+  Top = 111
+  Width = 719
+  Height = 579
   Caption = 'Demo Code Folding'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -26,8 +26,8 @@ object Form1: TForm1
   object SynEdit1: TSynEdit
     Left = 249
     Top = 28
-    Width = 539
-    Height = 494
+    Width = 462
+    Height = 505
     Align = alClient
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -46,6 +46,7 @@ object Form1: TForm1
     Gutter.ShowLineNumbers = True
     Gutter.Gradient = True
     Gutter.GradientEndColor = clMoneyGreen
+    Highlighter = SynPasSyn1
     ImeName = #1056#1091#1089#1089#1082#1072#1103
     Lines.UnicodeStrings = 'SynEdit1'
   end
@@ -53,7 +54,7 @@ object Form1: TForm1
     Left = 0
     Top = 28
     Width = 249
-    Height = 494
+    Height = 505
     Align = alLeft
     OptionsView.RowHeaderWidth = 123
     TabOrder = 1
@@ -62,7 +63,7 @@ object Form1: TForm1
   object tbMain: TToolBar
     Left = 0
     Top = 0
-    Width = 788
+    Width = 711
     Height = 28
     AutoSize = True
     BorderWidth = 1
@@ -252,6 +253,10 @@ object Form1: TForm1
       OnClick = SpeedButton6Click
     end
   end
+  object SynPasSyn1: TSynPasSyn
+    Left = 240
+    Top = 200
+  end
   object FontDialog1: TFontDialog
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -264,8 +269,8 @@ object Form1: TForm1
   end
   object MainMenu2: TMainMenu
     Images = imglMain
-    Left = 368
-    Top = 264
+    Left = 376
+    Top = 200
     object File2: TMenuItem
       Caption = '&File'
       object New1: TMenuItem
@@ -296,6 +301,101 @@ object Form1: TForm1
     Options = [ofHideReadOnly, ofPathMustExist, ofFileMustExist, ofEnableSizing]
     Left = 160
     Top = 168
+  end
+  object SynCSSyn1: TSynCSSyn
+    Left = 272
+    Top = 200
+  end
+  object SynCppSyn1: TSynCppSyn
+    Left = 304
+    Top = 200
+  end
+  object SynIniSyn1: TSynIniSyn
+    Left = 464
+    Top = 200
+  end
+  object SynJavaSyn1: TSynJavaSyn
+    Left = 496
+    Top = 200
+  end
+  object SynVBScriptSyn1: TSynVBScriptSyn
+    Left = 560
+    Top = 200
+  end
+  object SynPerlSyn1: TSynPerlSyn
+    Left = 592
+    Top = 200
+  end
+  object SynVBSyn1: TSynVBSyn
+    Left = 656
+    Top = 200
+  end
+  object SynWebEsSyn1: TSynWebEsSyn
+    DefaultFilter = 'Javascript Files (*.js)|*.js'
+    ActiveHighlighterSwitch = False
+    Engine = SynWebEngine1
+    Options.PhpVersion = spvPhp5
+    Options.PhpShortOpenTag = True
+    Options.PhpAspTags = False
+    Options.PhpEmbeded = False
+    Options.UseEngineOptions = False
+    Left = 640
+    Top = 320
+  end
+  object SynWebXmlSyn1: TSynWebXmlSyn
+    DefaultFilter = 
+      'XML Files (*.xml;*.xsd;*.xsl;*.xslt;*.dtd)|*.xml;*.xsd;*.xsl;*.x' +
+      'slt;*.dtd'
+    ActiveHighlighterSwitch = False
+    Engine = SynWebEngine1
+    Options.PhpVersion = spvPhp5
+    Options.PhpShortOpenTag = False
+    Options.PhpAspTags = False
+    Options.PhpEmbeded = True
+    Options.UseEngineOptions = False
+    Left = 664
+    Top = 448
+  end
+  object SynWebPhpCliSyn1: TSynWebPhpCliSyn
+    DefaultFilter = 
+      'PHP Files (*.php;*.php3;*.phtml;*.inc)|*.php;*.php3;*.phtml;*.in' +
+      'c'
+    ActiveHighlighterSwitch = False
+    Engine = SynWebEngine1
+    Options.PhpVersion = spvPhp5
+    Options.PhpShortOpenTag = True
+    Options.PhpAspTags = False
+    Options.UseEngineOptions = False
+    Left = 512
+    Top = 288
+  end
+  object SynWebEngine1: TSynWebEngine
+    Options.HtmlVersion = shvXHtml10Transitional
+    Options.WmlVersion = swvWml13
+    Options.XsltVersion = swvXslt20
+    Options.CssVersion = scvCss21
+    Options.PhpVersion = spvPhp5
+    Options.PhpShortOpenTag = True
+    Options.PhpAspTags = False
+    Left = 456
+    Top = 360
+  end
+  object SynWebHtmlSyn1: TSynWebHtmlSyn
+    DefaultFilter = 'HTML Documents (*.htm;*.html)|*.htm;*.html'
+    ActiveHighlighterSwitch = False
+    Engine = SynWebEngine1
+    Options.HtmlVersion = shvXHtml10Transitional
+    Options.CssVersion = scvCss21
+    Options.PhpVersion = spvPhp5
+    Options.PhpShortOpenTag = True
+    Options.PhpAspTags = False
+    Options.AllowASPTags = True
+    Options.CssEmbeded = True
+    Options.PhpEmbeded = True
+    Options.EsEmbeded = True
+    Options.UseEngineOptions = False
+    Left = 656
+    Top = 392
   end
   object imglMain: TImageList
     Left = 164
@@ -3552,5 +3652,19 @@ object Form1: TForm1
     Options = [ofHideReadOnly, ofPathMustExist, ofFileMustExist, ofEnableSizing]
     Left = 192
     Top = 144
+  end
+  object SynWebCssSyn1: TSynWebCssSyn
+    DefaultFilter = 'CSS Files (*.css)|*.css'
+    ActiveHighlighterSwitch = False
+    Engine = SynWebEngine1
+    Options.HtmlVersion = shvXHtml10Transitional
+    Options.CssVersion = scvCss21
+    Options.PhpVersion = spvPhp5
+    Options.PhpShortOpenTag = True
+    Options.PhpAspTags = False
+    Options.PhpEmbeded = False
+    Options.UseEngineOptions = False
+    Left = 80
+    Top = 40
   end
 end
