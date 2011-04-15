@@ -3498,6 +3498,11 @@ var
       end
       else
         bAnySelection := False;
+      while CollapsedFoldRangeByLine(vEnd.Line)<>nil do
+        begin
+        vEnd.Line:=vEnd.Line-1;
+        vEnd.Char:=Length(Lines[vEnd.Line-1])+1;
+        end;
       // If there is any visible selection so far, then test if there is an
       // intersection with the area to be painted.
       if bAnySelection then
