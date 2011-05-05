@@ -12893,7 +12893,10 @@ procedure TCustomSynEdit.ExpandLine(Line: Integer);
 var
   FoldRange: TSynEditFoldRange;
   needUpdateGutter:Boolean;
+  b,e:TBufferCoord;
 begin
+  b:=BlockBegin;
+  e:=BlockEnd;
   needUpdateGutter:=False;
   FoldRange := CollapsedFoldRangeByLine(Line);
   while FoldRange<>nil do
@@ -12904,6 +12907,8 @@ begin
     end;
   if needUpdateGutter then
     GutterChanged(Self);
+  BlockBegin:=b;
+  BlockEnd:=e;
 end;
 
 procedure TCustomSynEdit.ExpandAll;
