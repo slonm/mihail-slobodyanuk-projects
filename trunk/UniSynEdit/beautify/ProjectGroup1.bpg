@@ -1,0 +1,29 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = jsbeautify_demo.exe CssTidy.exe TseCSSParser.bpl Project1.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+jsbeautify_demo.exe: jsbeautifier\jsbeautify_demo.dpr
+  $(DCC)
+
+CssTidy.exe: csstidy\CssTidy.dpr
+  $(DCC)
+
+TseCSSParser.bpl: prototypes\cssparser\TseCSSParser.dpk
+  $(DCC)
+
+Project1.exe: prototypes\cssparser\Demo\Project1.dpr
+  $(DCC)
+
+
