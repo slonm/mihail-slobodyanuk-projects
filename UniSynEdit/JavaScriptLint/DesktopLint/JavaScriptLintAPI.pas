@@ -86,7 +86,7 @@ var
         end;
       end;
 
-      if BytesRead<1024 then
+      if BytesRead<>1024 then
         break;
     until false;
   end;
@@ -123,7 +123,7 @@ begin
   StartInf.cb := sizeof(TStartupInfo);
   StartInf.dwFlags := STARTF_USESHOWWINDOW or STARTF_USESTDHANDLES;
 
-  StartInf.wShowWindow := SW_SHOW; // SW_HIDE если надо запустить невидимо
+  StartInf.wShowWindow := SW_HIDE; // SW_HIDE если надо запустить невидимо
 
   StartInf.hStdInput := Pipes[IN_READ];
   StartInf.hStdOutput := Pipes[OUT_WRITE];
@@ -145,12 +145,12 @@ begin
       break;
   until false;
 
-  if i<WAIT_OBJECT_0 then
+  if i<>WAIT_OBJECT_0 then
     goto Error;
   StdOutput := ReadOutput;
 
   for ph := Low(TPipeHandles) to High(TPipeHandles) do
-    if Pipes[ph]<INVALID_HANDLE_VALUE then
+    if Pipes[ph]<>INVALID_HANDLE_VALUE then
       CloseHandle(Pipes[ph]);
 
   CloseHandle(ProcInf.hProcess);
@@ -167,7 +167,7 @@ Error:
     CloseHandle(ProcInf.hThread);
     i := WaitForSingleObject(ProcInf.hProcess, 1000);
     CloseHandle(ProcInf.hProcess);
-    if i<WAIT_OBJECT_0 then
+    if i<>WAIT_OBJECT_0 then
 
     begin
       ProcInf.hProcess := OpenProcess(PROCESS_TERMINATE,
@@ -188,115 +188,12 @@ Error:
 
 end;
 
-function ExecuteProcess(commandline, input: string; var output: string; var
-  error: string): boolean;
-var
-  saAttr: TSecurityAttributes;
-  hChildStdoutRd, hChildStdoutWr, hChildStdinRd, hChildStdinWr: THandle;
-  piProcInfo: TProcessInformation;
-  siStartInfo: TStartupInfo;
-  dwBytesRead, dwBytesWritten: DWORD;
-  chBuf: array[0..415] of CHAR;
-  i: Integer;
-begin
-  // SEE http://msdn.microsoft.com/library/en-us/dllproc/base/creating_a_child_process_with_redirected_input_and_output.asp?frame=true
-  output := '';
-  result := False;
-  // Set the bInheritHandle flag so pipe handles are inherited.
-  saAttr.nLength := sizeof(TSecurityAttributes);
-  saAttr.bInheritHandle := TRUE;
-  saAttr.lpSecurityDescriptor := nil;
-
-  // Create a pipe for the child process's STDOUT that is not inherited
-  if (not CreatePipe(hChildStdoutRd, hChildStdoutWr, @saAttr, 0)) then
-  begin
-    error := GetLastErrorString();
-    exit;
-  end;
-  SetHandleInformation(hChildStdoutRd, HANDLE_FLAG_INHERIT, 0);
-
-  // Create a pipe for the child process's STDIN that is not inherited
-  if (not CreatePipe(hChildStdinRd, hChildStdinWr, @saAttr, 0)) then
-  begin
-    error := GetLastErrorString();
-    exit;
-  end;
-  SetHandleInformation(hChildStdinWr, HANDLE_FLAG_INHERIT, 0);
-
-  // Create the child process
-  ZeroMemory(@piProcInfo, sizeof(TProcessInformation));
-
-  ZeroMemory(@siStartInfo, sizeof(TStartupInfo));
-  siStartInfo.cb := sizeof(TStartupInfo);
-  siStartInfo.hStdError := hChildStdoutWr;
-  siStartInfo.hStdOutput := hChildStdoutWr;
-  siStartInfo.hStdInput := hChildStdinRd;
-  siStartInfo.dwFlags := siStartInfo.dwFlags and STARTF_USESTDHANDLES and
-    STARTF_USESHOWWINDOW;
-
-  if (not CreateProcess(nil,
-    PChar(commandline), // command line
-    nil, // process security attributes
-    nil, // primary thread security attributes
-    TRUE, // handles are inherited
-    0, // creation flags
-    nil, // use parent's environment
-    nil, // use parent's current directory
-    siStartInfo, // STARTUPINFO pointer
-    piProcInfo)) {// receives PROCESS_INFORMATION} then
-  begin
-    error := GetLastErrorString();
-    exit;
-  end;
-  CloseHandle(piProcInfo.hProcess);
-  CloseHandle(piProcInfo.hThread);
-
-  // write the result and close the file so the client stops reading
-  dwBytesWritten := 0;
-  if (not WriteFile(hChildStdinWr, PChar(input)^, length(input), dwBytesWritten, nil))
-    then
-  begin
-    error := GetLastErrorString();
-    exit;
-  end;
-  if (not CloseHandle(hChildStdinWr)) then
-  begin
-    error := GetLastErrorString();
-    exit;
-  end;
-
-  // Close the write end of the pipe before reading from the read end of the pipe.
-  if (not CloseHandle(hChildStdoutWr)) then
-  begin
-    error := GetLastErrorString();
-    exit;
-  end;
-
-  // Read output from the child process, and write to parent's STDOUT.
-  while True do
-  begin
-    if (not ReadFile(hChildStdoutRd, chBuf, sizeof(chBuf), dwBytesRead, nil))
-      then
-    begin
-      if (GetLastError() = ERROR_BROKEN_PIPE) then
-        break;
-      error := 'The output pipe could not be read. ' + GetLastErrorString();
-      Exit;
-    end;
-    if (dwBytesRead = 0) then
-      break;
-    for i := 0 to dwBytesRead - 1 do
-      output := output + chBuf[i];
-  end;
-  result := true;
-end;
-
 function LintString(sBinaryPath, sConfigPath, code: string;
   messages: TStringList; var error: string): boolean;
 var
   commandline, results: string;
   lines: TStringList;
-  i, j: Integer;
+  i: Integer;
 begin
   result := false;
   // Construct the command line
@@ -310,10 +207,8 @@ begin
   commandline := commandline + ' -context -nologo -nofilelisting -nosummary';
   commandline := commandline +
     ' -output-format "encode:__LINE__'#9'__COL__'#9'__ERROR_PREFIX__'#9'__ERROR_MSG__"';
-//    ' -output-format "encode:__LINE__'#9'__COL__'#9'__ERROR_NAME__'#9'__ERROR_PREFIX__'#9'__ERROR_MSG__"';
 
   // Run the Lint
-//  if (not ExecuteProcess(commandline, code, results, error)) then
   if (not ExecuteFile(commandline, code, 1000, results, error)) then
   begin
     error := 'Unable to run JavaScript Lint. ' + error;

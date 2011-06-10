@@ -106,13 +106,13 @@ Launcher=
 UseLauncher=0
 DebugCWD=
 [Version Info]
-IncludeVerInfo=0
-AutoIncBuild=0
-MajorVer=1
-MinorVer=0
-Release=0
-Build=0
-Debug=0
+IncludeVerInfo=1
+AutoIncBuild=1
+MajorVer=2011
+MinorVer=6
+Release=10
+Build=1
+Debug=1
 PreRelease=0
 Special=0
 Private=0
@@ -122,7 +122,7 @@ CodePage=1251
 [Version Info Keys]
 CompanyName=
 FileDescription=
-FileVersion=1.0.0.0
+FileVersion=2011.6.10.1
 InternalName=
 LegalCopyright=
 LegalTrademarks=
@@ -130,3 +130,6 @@ OriginalFilename=
 ProductName=
 ProductVersion=1.0.0.0
 Comments=
+[HistoryLists\hlUnitAliases]
+Count=1
+Item0=WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;
