@@ -1,0 +1,1 @@
+type jsl-test.js | "jsl.exe" -stdin -context -nologo -nofilelisting -nosummary -output-format "encode:__FILE__\t__LINE__\t__COL__\t__ERROR_NAME__\t__ERROR_PREFIX__\t__ERROR_MSG__\" > out.txt
