@@ -1,0 +1,11 @@
+9	14	equal_as_assign	warning	test for equality (==) mistyped as assignment (=)?
+14	14	useless_comparison	lint warning	useless comparison; comparing identical expressions
+21	5	missing_break	lint warning	missing break statement
+21	20	inc_dec_within_stmt	lint warning	increment (++) and decrement (--) operators used as part of greater statement
+23	5	missing_default_case	lint warning	missing default case in switch statement
+26	11	no_return_value	warning	function subtract does not always return a value
+26	13	unreachable_code	lint warning	unreachable code
+27	1	no_return_value	warning	function subtract does not always return a value
+20	0	undeclared_identifier	lint warning	undeclared identifier: z
+21	0	undeclared_identifier	lint warning	undeclared identifier: z
+22	0	undeclared_identifier	lint warning	undeclared identifier: z

@@ -1,0 +1,1 @@
+type jsl-test.js | "jsl.bat" > out.txt
