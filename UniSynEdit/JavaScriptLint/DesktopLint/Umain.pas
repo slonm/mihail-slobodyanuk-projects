@@ -24,13 +24,14 @@ type
     tsLint: TTabSheet;
     tsOptions: TTabSheet;
     memo1: TSynEdit;
-    tv1: TTreeView;
     spl1: TSplitter;
     SynJScriptSyn1: TSynJScriptSyn;
-    mmo1: TMemo;
-    btnOptions: TToolButton;
-    actOptions: TAction;
     lst1: TJvCheckListBox;
+    pnl1: TPanel;
+    tv1: TTreeView;
+    mmo1: TMemo;
+    actSave: TAction;
+    btn1: TToolButton;
     procedure FormCreate(Sender: TObject);
     procedure actLintExecute(Sender: TObject);
     procedure FileOpen1Accept(Sender: TObject);
@@ -38,6 +39,8 @@ type
     procedure tv1DblClick(Sender: TObject);
     procedure memo1SpecialLineColors(Sender: TObject; Line: Integer;
       var Special: Boolean; var FG, BG: TColor);
+    procedure actSaveExecute(Sender: TObject);
+    procedure FileSaveAs1Accept(Sender: TObject);
   private
     LastErrorCoord: TBufferCoord;
     procedure FillTree(mess: TStringList);
@@ -60,6 +63,8 @@ procedure TMain.FormCreate(Sender: TObject);
 var i:Integer;
 begin
 memo1.Clear;
+mmo1.align:=alClient;
+tv1.align:=alClient;
   for i:=0 to JSLOptionsCount-1 do
     lst1.Items.Add(DefaultConf[i].key + '    ('+DefaultConf[i].desc+')');
 FlushConf;
@@ -197,6 +202,17 @@ begin
       BG:=clYellow;
       Special:=True;
     end;
+end;
+
+procedure TMain.actSaveExecute(Sender: TObject);
+begin
+  memo1.SaveToFile(FileOpen1.Dialog.FileName);
+end;
+
+procedure TMain.FileSaveAs1Accept(Sender: TObject);
+begin
+  memo1.SaveToFile(FileSaveAs1.Dialog.FileName);
+  FileOpen1.Dialog.FileName:=FileSaveAs1.Dialog.FileName;
 end;
 
 end.
