@@ -90,7 +90,7 @@ MaxStackSize=1048576
 ImageBase=4194304
 ExeDescription=
 [Directories]
-OutputDir=
+OutputDir=exe
 UnitOutputDir=
 PackageDLLOutputDir=
 PackageDCPOutputDir=
@@ -110,7 +110,7 @@ IncludeVerInfo=1
 AutoIncBuild=1
 MajorVer=2011
 MinorVer=6
-Release=10
+Release=14
 Build=1
 Debug=1
 PreRelease=0
@@ -122,7 +122,7 @@ CodePage=1251
 [Version Info Keys]
 CompanyName=
 FileDescription=
-FileVersion=2011.6.10.1
+FileVersion=2011.6.14.1
 InternalName=
 LegalCopyright=
 LegalTrademarks=
@@ -133,3 +133,6 @@ Comments=
 [HistoryLists\hlUnitAliases]
 Count=1
 Item0=WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;
+[HistoryLists\hlOutputDirectorry]
+Count=1
+Item0=exe
