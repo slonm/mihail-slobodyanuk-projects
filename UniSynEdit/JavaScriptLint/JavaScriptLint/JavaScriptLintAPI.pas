@@ -35,31 +35,31 @@ begin
   StringReplace(result, '\\', '\', [rfReplaceAll]);
 end;
 
-function ExecuteFile(FileName,StdInput: string;
-                     TimeOut: integer;
-                     var StdOutput:string;
-                     var errorMsg: string) : boolean;
+function ExecuteFile(FileName, StdInput: string;
+  TimeOut: integer;
+  var StdOutput: string;
+  var errorMsg: string): boolean;
 
-label Error;
-
-type
-  TPipeHandles = (IN_WRITE,  IN_READ,
-                  OUT_WRITE, OUT_READ,
-                  ERR_WRITE, ERR_READ);
+label
+  Error;
 
 type
-  TPipeArray = array [TPipeHandles] of THandle;
+  TPipeHandles = (IN_WRITE, IN_READ,
+    OUT_WRITE, OUT_READ,
+    ERR_WRITE, ERR_READ);
+
+type
+  TPipeArray = array[TPipeHandles] of THandle;
 
 var
-  i         : Cardinal;
-  ph        : TPipeHandles;
-  sa        : TSecurityAttributes;
-  Pipes     : TPipeArray;
-  StartInf  : TStartupInfo;
-  ProcInf   : TProcessInformation;
-  Buf       : array[0..1024] of byte;
-  TimeStart : TDateTime;
-
+  i: Cardinal;
+  ph: TPipeHandles;
+  sa: TSecurityAttributes;
+  Pipes: TPipeArray;
+  StartInf: TStartupInfo;
+  ProcInf: TProcessInformation;
+  Buf: array[0..1024] of byte;
+  TimeStart: TDateTime;
 
   function ReadOutput: string;
   var
@@ -86,7 +86,7 @@ var
         end;
       end;
 
-      if BytesRead<>1024 then
+      if BytesRead <> 1024 then
         break;
     until false;
   end;
@@ -145,12 +145,12 @@ begin
       break;
   until false;
 
-  if i<>WAIT_OBJECT_0 then
+  if i <> WAIT_OBJECT_0 then
     goto Error;
   StdOutput := ReadOutput;
 
   for ph := Low(TPipeHandles) to High(TPipeHandles) do
-    if Pipes[ph]<>INVALID_HANDLE_VALUE then
+    if Pipes[ph] <> INVALID_HANDLE_VALUE then
       CloseHandle(Pipes[ph]);
 
   CloseHandle(ProcInf.hProcess);
@@ -158,21 +158,20 @@ begin
   Result := true;
   Exit;
 
-
-Error:
-  errorMsg:= GetLastErrorString();
-  if ProcInf.hProcess=INVALID_HANDLE_VALUE then
+  Error:
+  errorMsg := GetLastErrorString();
+  if ProcInf.hProcess = INVALID_HANDLE_VALUE then
 
   begin
     CloseHandle(ProcInf.hThread);
     i := WaitForSingleObject(ProcInf.hProcess, 1000);
     CloseHandle(ProcInf.hProcess);
-    if i<>WAIT_OBJECT_0 then
+    if i <> WAIT_OBJECT_0 then
 
     begin
       ProcInf.hProcess := OpenProcess(PROCESS_TERMINATE,
-                                      FALSE,
-                                      ProcInf.dwProcessId);
+        FALSE,
+        ProcInf.dwProcessId);
 
       if ProcInf.hProcess = 0 then
       begin
