@@ -7,9 +7,11 @@ uses
   Dialogs, ComCtrls, ToolWin, SynEditHighlighter, SynHighlighterJScript,
   ExtCtrls, SynEdit, ActnList, StdActns, XPStyleActnCtrls, ActnMan, ImgList,
   JavaScriptLintAPI, StdCtrls, UJSLDefaultConf,
-  CheckLst, JvExCheckLst, JvCheckListBox;
+  CheckLst, JvExCheckLst, JvCheckListBox, JvExExtCtrls, JvExtComponent,
+  JvSplit;
 
 type
+  TState = (stProgramOpened, stFileOpened, stLintExecuted, stFileSaved);
   TMain = class(TForm)
     ToolBar1: TToolBar;
     ToolButton1: TToolButton;
@@ -24,7 +26,6 @@ type
     tsLint: TTabSheet;
     tsOptions: TTabSheet;
     memo1: TSynEdit;
-    spl1: TSplitter;
     SynJScriptSyn1: TSynJScriptSyn;
     lst1: TJvCheckListBox;
     pnl1: TPanel;
@@ -33,6 +34,12 @@ type
     actSave: TAction;
     btn1: TToolButton;
     stat1: TStatusBar;
+    JvxSplitter1: TJvxSplitter;
+    FileExit1: TFileExit;
+    btn2: TToolButton;
+    btn4: TToolButton;
+    btn5: TToolButton;
+    FilePrintSetup1: TFilePrintSetup;
     procedure FormCreate(Sender: TObject);
     procedure actLintExecute(Sender: TObject);
     procedure FileOpen1Accept(Sender: TObject);
@@ -42,12 +49,13 @@ type
       var Special: Boolean; var FG, BG: TColor);
     procedure actSaveExecute(Sender: TObject);
     procedure FileSaveAs1Accept(Sender: TObject);
+    procedure FilePrintSetup1Accept(Sender: TObject);
   private
     LastErrorCoord: TBufferCoord;
     procedure FillTree(mess: TStringList);
-    function MakeConf(): string;
+    function MakeConf: string;
     procedure FlushConf;
-    procedure UpdateCaption;
+    procedure SetState(state:TState);
   public
     { Public declarations }
   end;
@@ -56,7 +64,7 @@ var
   Main: TMain;
 
 implementation
-
+uses Printers;
 type
   PBufferCoord = ^TBufferCoord;
 {$R *.dfm}
@@ -71,6 +79,7 @@ begin
   for i := 0 to JSLOptionsCount - 1 do
     lst1.Items.Add(DefaultConf[i].key + '    (' + DefaultConf[i].desc + ')');
   FlushConf;
+  SetState(stProgramOpened);
 end;
 
 procedure TMain.FlushConf;
@@ -104,6 +113,7 @@ begin
   mess.Free;
   if conf <> '' then
     DeleteFile(conf);
+  SetState(stLintExecuted);
 end;
 
 function TMain.MakeConf: string;
@@ -185,7 +195,7 @@ end;
 procedure TMain.FileOpen1Accept(Sender: TObject);
 begin
   memo1.LoadFromFile(FileOpen1.Dialog.FileName);
-  updateCaption;
+  SetState(stFileOpened);
 end;
 
 procedure TMain.tv1Deletion(Sender: TObject; Node: TTreeNode);
@@ -223,19 +233,79 @@ end;
 procedure TMain.actSaveExecute(Sender: TObject);
 begin
   memo1.SaveToFile(FileOpen1.Dialog.FileName);
+  SetState(stFileSaved);
 end;
 
 procedure TMain.FileSaveAs1Accept(Sender: TObject);
 begin
   memo1.SaveToFile(FileSaveAs1.Dialog.FileName);
   FileOpen1.Dialog.FileName := FileSaveAs1.Dialog.FileName;
-  updateCaption;
+  SetState(stFileSaved);
 end;
 
-procedure TMain.updateCaption;
+procedure TMain.SetState(state:TState);
+procedure UpadateCaption;
 begin
-  caption := 'JavaScript Lint GUI - ' +
-    extractfilename(FileOpen1.Dialog.FileName);
+      caption := 'JavaScript Lint GUI - ' +
+        extractfilename(FileOpen1.Dialog.FileName);
+end;
+
+begin
+  LockWindowUpdate(Handle);
+  //SendMessage(HWND, WM_SETREDRAW, 0, 0);
+  FileSaveAs1.Enabled:=False;
+  actSave.Enabled:=False;
+  FilePrintSetup1.Enabled:=False;
+  actLint.Enabled:=False;
+  pgcLint.Hide;
+  pnl1.Hide;
+  JvxSplitter1.Hide;
+  case state of
+    stFileOpened:
+      begin
+      FileSaveAs1.Enabled:=true;
+      actSave.Enabled:=true;
+      FilePrintSetup1.Enabled:=true;
+      actLint.Enabled:=true;
+      UpadateCaption;
+      pgcLint.Show;
+      tv1.Items.Clear;
+      end;
+    stLintExecuted:
+      begin
+      FileSaveAs1.Enabled:=true;
+      actSave.Enabled:=true;
+      FilePrintSetup1.Enabled:=true;
+      actLint.Enabled:=true;
+      pgcLint.Show;
+      pnl1.Show;
+      JvxSplitter1.Show;
+      UpadateCaption;
+      end;
+    stFileSaved:
+      begin
+      FileSaveAs1.Enabled:=true;
+      actSave.Enabled:=true;
+      FilePrintSetup1.Enabled:=true;
+      actLint.Enabled:=true;
+      UpadateCaption;
+      pgcLint.Show;
+      if tv1.Items.Count>0 then
+        begin
+        pnl1.Show;
+        JvxSplitter1.Show;
+        end;
+      UpadateCaption;
+      end;
+  end;
+  LockWindowUpdate(0);
+end;
+
+procedure TMain.FilePrintSetup1Accept(Sender: TObject);
+begin
+  Printer.BeginDoc;
+  Printer.Canvas.TextOut(0,0,memo1.Lines.Text);
+  Printer.EndDoc;
 end;
 
 end.
