@@ -1,14 +1,14 @@
 [Closed Files]
-File_0=SourceModule,'F:\project\mihail-slobodyanuk-projects\trunk\UniSynEdit\JavaScriptLint\JavaScriptLint\JavaScriptLintAPI.pas',0,1,1,1,1,0,0
-File_1=SourceModule,'C:\PROGRA~1\Borland\Delphi7\source\RTL\sys\system.pas',0,1,1,1,10,0,0
-File_2=SourceModule,'c:\program files\borland\delphi7\Source\rtl\Win\Windows.pas',0,1,2603,1,2610,0,0
-File_3=SourceModule,'F:\project\mihail-slobodyanuk-projects\trunk\UniSynEdit\JavaScriptLint\Tree_of_folders\Tf.pas',0,1,98,42,113,1,0
-File_4=SourceModule,'C:\PROGRA~1\Borland\Delphi7\source\RTL\sys\sysutils.pas',0,1,15643,1,15652,0,0
-File_5=SourceModule,'F:\project\mihail-slobodyanuk-projects\trunk\UniSynEdit\UniSynEditDemo\CodeFolding\DemoUnit.pas',0,1,1,1,1,1,0
-File_6=SourceModule,'C:\project\beautifier\main.pas',0,1,55,1,67,1,0
-File_7=SourceModule,'C:\project\beautifier\cssmin.pas',0,1,1,1,9,0,0
-File_8=SourceModule,'C:\project\beautifier\cssmin_tests.pas',0,1,23,1,29,0,0
-File_9=SourceModule,'C:\project\beautifier\jsmin.pas',0,1,1,1,6,0,0
+File_0=SourceModule,'c:\program files\borland\delphi7\Source\rtl\Win\Windows.pas',0,1,30326,1,30332,0,0
+File_1=SourceModule,'c:\program files\borland\delphi7\Source\rtl\Win\Messages.pas',0,1,38,1,44,0,0
+File_2=SourceModule,'F:\project\mihail-slobodyanuk-projects\trunk\UniSynEdit\JavaScriptLint\JavaScriptLint\JavaScriptLintAPI.pas',0,1,1,1,1,0,0
+File_3=SourceModule,'C:\PROGRA~1\Borland\Delphi7\source\RTL\sys\system.pas',0,1,1,1,10,0,0
+File_4=SourceModule,'F:\project\mihail-slobodyanuk-projects\trunk\UniSynEdit\JavaScriptLint\Tree_of_folders\Tf.pas',0,1,98,42,113,1,0
+File_5=SourceModule,'C:\PROGRA~1\Borland\Delphi7\source\RTL\sys\sysutils.pas',0,1,15643,1,15652,0,0
+File_6=SourceModule,'F:\project\mihail-slobodyanuk-projects\trunk\UniSynEdit\UniSynEditDemo\CodeFolding\DemoUnit.pas',0,1,1,1,1,1,0
+File_7=SourceModule,'C:\project\beautifier\main.pas',0,1,55,1,67,1,0
+File_8=SourceModule,'C:\project\beautifier\cssmin.pas',0,1,1,1,9,0,0
+File_9=SourceModule,'C:\project\beautifier\cssmin_tests.pas',0,1,23,1,29,0,0
 
 [Modules]
 Module0=F:\project\mihail-slobodyanuk-projects\trunk\UniSynEdit\JavaScriptLint\JavaScriptLint\Umain.pas
@@ -19,7 +19,7 @@ EditWindowCount=1
 [F:\project\mihail-slobodyanuk-projects\trunk\UniSynEdit\JavaScriptLint\JavaScriptLint\Umain.pas]
 ModuleType=SourceModule
 FormState=1
-FormOnTop=0
+FormOnTop=1
 
 [F:\project\mihail-slobodyanuk-projects\trunk\UniSynEdit\JavaScriptLint\JavaScriptLint\UJSLDefaultConf.pas]
 ModuleType=SourceModule
@@ -44,21 +44,21 @@ MessageView=MessageView@EditWindow0
 Create=1
 Visible=1
 State=0
-Left=32
-Top=171
+Left=40
+Top=124
 Width=912
 Height=601
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=904
 ClientHeight=574
-LeftPanelSize=140
+LeftPanelSize=0
 LeftPanelClients=CodeExplorer@EditWindow0
-LeftPanelData=000004000000000000000000000000000000000000000000000100000000000000000C000000436F64654578706C6F726572FFFFFFFF
+LeftPanelData=00000400010000000C000000436F64654578706C6F72657200000000000000000000000000000000000100000000000000000C000000436F64654578706C6F726572FFFFFFFF
 RightPanelSize=0
 BottomPanelSize=0
 BottomPanelClients=MessageView@EditWindow0
-BottomPanelData=00000400010000000B0000004D657373616765566965778803000000000000025500000000000000010000000000000000000000000100000000880300000B0000004D65737361676556696577FFFFFFFF
+BottomPanelData=00000400010000000B0000004D657373616765566965778803000000000000027B0000000000000001000000000000000000000000010000000088030000000000000100000000880300000B0000004D65737361676556696577FFFFFFFF
 
 [View0]
 Module=F:\project\mihail-slobodyanuk-projects\trunk\UniSynEdit\JavaScriptLint\JavaScriptLint\UJSLDefaultConf.pas
@@ -69,9 +69,9 @@ LeftCol=1
 
 [View1]
 Module=F:\project\mihail-slobodyanuk-projects\trunk\UniSynEdit\JavaScriptLint\JavaScriptLint\Umain.pas
-CursorX=20
-CursorY=212
-TopLine=209
+CursorX=45
+CursorY=304
+TopLine=295
 LeftCol=1
 
 [Watches]
@@ -196,8 +196,8 @@ LRDockWidth=190
 Dockable=1
 SplitPos=146
 ArrangeBy=Name
-SelectedItem=Caption
-ExpandedItems=Dialog,Options
+SelectedItem=Images
+ExpandedItems=
 HiddenCategories=
 
 [BreakpointWindow]
@@ -379,7 +379,7 @@ CreationStackFrameThreadColumnWidth8=50
 
 [CodeExplorer@EditWindow0]
 Create=1
-Visible=1
+Visible=0
 State=0
 Left=0
 Top=12
@@ -400,12 +400,12 @@ State=0
 Left=12
 Top=0
 Width=892
-Height=85
+Height=123
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=892
-ClientHeight=85
-TBDockHeight=85
+ClientHeight=123
+TBDockHeight=123
 LRDockWidth=443
 Dockable=1
 
@@ -413,26 +413,6 @@ Dockable=1
 DockHostCount=2
 
 [DockSite0]
-DockSiteType=1
-Create=1
-Visible=0
-State=0
-Left=51
-Top=543
-Width=900
-Height=183
-MaxLeft=-1
-MaxTop=-1
-ClientWidth=892
-ClientHeight=159
-TBDockHeight=159
-LRDockWidth=283
-Dockable=1
-TabPosition=0
-ActiveTab=Watch List
-TabDockClients=WatchWindow,BreakpointWindow
-
-[DockSite1]
 DockSiteType=1
 Create=1
 Visible=1
@@ -451,4 +431,24 @@ Dockable=1
 TabPosition=0
 ActiveTab=Object Inspector
 TabDockClients=PropertyInspector,ProjectManager
+
+[DockSite1]
+DockSiteType=1
+Create=1
+Visible=0
+State=0
+Left=51
+Top=543
+Width=900
+Height=183
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=892
+ClientHeight=159
+TBDockHeight=159
+LRDockWidth=283
+Dockable=1
+TabPosition=0
+ActiveTab=Watch List
+TabDockClients=WatchWindow,BreakpointWindow
 
