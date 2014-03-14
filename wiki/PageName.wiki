@@ -2,26 +2,44 @@ Please check on current beta
 
 Fixed and forwarded to QA:
 [https://elephantdrive.atlassian.net/browse/DQAAT-854 DQAAT-854 Linux elephantdrive 2.4.20140213alpha:hostname is lost after deleting .db]
+
 [https://elephantdrive.atlassian.net/browse/DQAAT-1007 DQAAT-1007 x86_ready_to_nas:client stops responding during authentication]
+
 [https://elephantdrive.atlassian.net/browse/DQAAT-987 DQAAT-987 x86_linux_beta_static : client doesn’t respond because of wrong login or password]
+
 [https://elephantdrive.atlassian.net/browse/DQAAT-829 DQAAT-829 Linux alpha:file with null size uploaded again without reason]
+
 [https://elephantdrive.atlassian.net/browse/DQAAT-878 DQAAT-878 Linux readynasvault:some files are uploaded during every session]
 
 Possibly fixed. Need QA:
 [https://elephantdrive.atlassian.net/browse/DQAAT-453 DQAAT-453 Upload fail]
+
 [https://elephantdrive.atlassian.net/browse/DQAAT-461 DQAAT-461 Freebsd job blocked after incorrect dir settings]
+
 [https://elephantdrive.atlassian.net/browse/DQAAT-503 DQAAT-503 Autodelete failed]
+
 [https://elephantdrive.atlassian.net/browse/DQAAT-575 DQAAT-575 Linux:middle file backup stucked]
+
 [https://elephantdrive.atlassian.net/browse/DQAAT-753 DQAAT-753 Netgear:encrypting of big file stucked]
+
 [https://elephantdrive.atlassian.net/browse/DQAAT-763 DQAAT-763 dlink327:login failed]
+
 [https://elephantdrive.atlassian.net/browse/DQAAT-803 DQAAT-803 SPARC:'Error 404' shown during launch]
+
 [https://elephantdrive.atlassian.net/browse/DQAAT-824 DQAAT-824 Linux alpha:inexisted file name]
+
 [https://elephantdrive.atlassian.net/browse/DQAAT-829 DQAAT-829 Linux alpha:file with null size uploaded again without reason]
+
 [https://elephantdrive.atlassian.net/browse/DQAAT-838 DQAAT-838 Linux beta:lost files during upload]
+
 [https://elephantdrive.atlassian.net/browse/DQAAT-844 DQAAT-844 Linux elephantdrive 2.4.20140213alpha:daily task has no title in the log]
+
 [https://elephantdrive.atlassian.net/browse/DQAAT-845 DQAAT-845 Linux elephantdrive 2.4.20140213alpha:perform tasks in different threads]
+
 [https://elephantdrive.atlassian.net/browse/DQAAT-846 DQAAT-846 Linux elephantdrive 2.4.20140213alpha:permission denied without reason]
+
 [https://elephantdrive.atlassian.net/browse/DQAAT-853 DQAAT-853 Linux elephantdrive 2.4.20140213alpha: extended info about limited access]
+
 [https://elephantdrive.atlassian.net/browse/DQAAT-904 DQAAT-904 readynas_x86_64 vers 2.4.20140220:behaviour with lost connection]
 
 Closed:
